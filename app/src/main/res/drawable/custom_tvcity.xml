@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/tvCity_background"/>
+
+    <corners android:radius="@dimen/tvCity_radius" />
+
+    <padding android:top="@dimen/tvCity_paddingTop"
+        android:bottom="@dimen/tvCity_paddingTop"
+        android:left="@dimen/tvCity_paddingLeft"
+        android:right="@dimen/tvCity_paddingLeft"/>
+
+</shape>

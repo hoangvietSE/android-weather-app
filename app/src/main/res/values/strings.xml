@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <string name="edtCity_hint">Search by City</string>
+
+    <string name="tvCity">OK</string>
+
+    <string name="itemToday">Today</string>
+    <string name="itemTomorrow">Tomorrow</string>
+    <string name="itemSevenDays">Next Seven Days</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Today_Fragment" translatable="false">Today</string>
+    <string name="Tomorrow_Fragment" translatable="false">Tomorrow</string>
+    <string name="SevenDays_Fragment" translatable="false">Next Seven Days</string>
+
+    <string name="tvContry_Today" translatable="false">Hanoi,VN</string>
+    <string name="tvTime_Today" translatable="false">January 7, 12:31</string>
+    <string name="tvTemperature_Today" translatable="false">31</string>
+    <string name="tvMetric01_Today" translatable="false">o</string>
+    <string name="tvMetric02_Today" translatable="false">C</string>
+    <string name="tvDescription_Today" translatable="false">Mostly Clouds</string>
+
+
+
+
+</resources>

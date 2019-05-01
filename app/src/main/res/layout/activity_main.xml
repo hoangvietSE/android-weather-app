@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linearLayoutCity_width"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/edtCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:background="@drawable/custom_edtcity"
+                    android:hint="@string/edtCity_hint" />
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/custom_tvcity"
+                    android:gravity="center"
+                    android:text="@string/tvCity" />
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/tabSelectedTextColor"
+        app:tabTextColor="@color/tabTextColor">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/itemToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemToday" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/itemTomorrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemTomorrow" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/itemSevenDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemSevenDays" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

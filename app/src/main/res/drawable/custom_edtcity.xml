@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/edtCity_background" />
+
+    <corners android:radius="@dimen/edtCity_radius" />
+
+    <padding
+        android:bottom="@dimen/edtCity_padding"
+        android:left="@dimen/edtCity_padding"
+        android:right="@dimen/edtCity_padding"
+        android:top="@dimen/edtCity_padding" />
+
+</shape>

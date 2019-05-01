@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="linearLayoutCity_width">80dp</dimen>
+
+    <dimen name="edtCity_radius">20dp</dimen>
+    <dimen name="edtCity_padding">10dp</dimen>
+
+    <dimen name="tvCity_radius">20dp</dimen>
+    <dimen name="tvCity_paddingTop">12dp</dimen>
+    <dimen name="tvCity_paddingLeft">5dp</dimen>
+
+    <!--Country-->
+    <dimen name="tvCountry_Today_textSize">16sp</dimen>
+    <dimen name="tvCountry_Today_margin">20dp</dimen>
+    <!--Time-->
+    <dimen name="tvTime_Today_textSize">16sp</dimen>
+    <dimen name="tvTime_Today_margin">20dp</dimen>
+    <!--Temperature-->
+    <dimen name="tvTemperature_Today_textSize">16sp</dimen>
+    <dimen name="tvTemperature_Today_margin">20dp</dimen>
+    <dimen name="tvTemperature_Today_width">100dp</dimen>
+    <dimen name="tvTemperature_Today_height">100dp</dimen>
+    <!--Metric01-->
+    <dimen name="tvMetric01_Today_textSize">20sp</dimen>
+    <dimen name="tvMetric01_Today_marginTop">125dp</dimen>
+    <!--Metric02-->
+    <dimen name="tvMetric02_Today_textSize">50sp</dimen>
+    <dimen name="tvMetric02_Today_marginTop">120dp</dimen>
+    <dimen name="tvMetric02_Today_marginLeft">5dp</dimen>
+
+    <!--Icon-->
+    <dimen name="imgIcon_Today_marginTop">135dp</dimen>
+    <dimen name="imgIcon_Today_marginRight">40dp</dimen>
+    <dimen name="imgIcon_Today_size">100dp</dimen>
+
+    <!--Description-->
+    <dimen name="tvDescription_Today_marginRight">80dp</dimen>
+    <dimen name="tvDescription_Today_marginLeft">320dp</dimen>
+    <dimen name="tvDescription_Today_textSize">16sp</dimen>
+
+    <!--ListView-->
+    <dimen name="lvDetails_Today_marginTop">20dp</dimen>
+
+
+</resources>

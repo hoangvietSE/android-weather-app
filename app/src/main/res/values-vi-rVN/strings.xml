@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thời tiết</string>
+    <string name="edtCity_hint">Tìm kiếm theo thành phố</string>
+    <string name="tvCity">Đồng ý</string>
+    <string name="itemToday">Hôm nay</string>
+    <string name="itemTomorrow">Ngày mai</string>
+    <string name="itemSevenDays">7 ngày tiếp theo</string>
+</resources>

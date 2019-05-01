@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorAccent">#009688</color>
+    <color name="tabSelectedTextColor">#ffffff</color>
+    <color name="tabTextColor">#000000</color>
+
+    <color name="edtCity_background">#ffffff</color>
+    <color name="tvCity_background">#CECCCC</color>
+
+    <color name="tvCountry_Today">#000000</color>
+    <color name="tvTime_Today">#000000</color>
+    <color name="tvTemperature_Today">#000000</color>
+    <color name="tvMetric01_Today">#000000</color>
+    <color name="tvMetric02_Today">#000000</color>
+    <color name="tvDescription_Today">#000000</color>
+    <color name="lvDetails_Today">#ffffff</color>
+</resources>
