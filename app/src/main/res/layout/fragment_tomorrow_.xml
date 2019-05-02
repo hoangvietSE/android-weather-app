@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tomorrow"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tvCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tvCountry_Today_margin"
+        android:layout_marginTop="@dimen/tvCountry_Today_margin"
+        android:text="@string/tvContry_Today"
+        android:textColor="@color/tvCountry_Today"
+        android:textSize="@dimen/tvCountry_Today_textSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tvTime_Today_margin"
+        android:layout_marginTop="@dimen/tvCountry_Today_margin"
+        android:text="@string/tvTime_Today"
+        android:textColor="@color/tvTime_Today"
+        android:textSize="@dimen/tvTime_Today_textSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCountry" />
+
+    <TextView
+        android:id="@+id/tvTemperature"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tvTemperature_Today_margin"
+        android:layout_marginTop="@dimen/tvTemperature_Today_margin"
+        android:text="@string/tvTemperature_Today"
+        android:textSize="@dimen/tvTemperature_Today_width"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+    <TextView
+        android:id="@+id/tvMetric01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tvMetric01_Today_marginTop"
+        android:text="@string/tvMetric01_Today"
+        android:textColor="@color/tvMetric01_Today"
+        android:textSize="@dimen/tvMetric01_Today_textSize"
+        app:layout_constraintLeft_toRightOf="@+id/tvTemperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMetric02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tvMetric02_Today_marginLeft"
+        android:layout_marginTop="@dimen/tvMetric02_Today_marginTop"
+        android:text="@string/tvMetric02_Today"
+        android:textColor="@color/tvMetric02_Today"
+        android:textSize="@dimen/tvMetric02_Today_textSize"
+        app:layout_constraintLeft_toRightOf="@+id/tvMetric01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="@dimen/imgIcon_Today_size"
+        android:layout_height="@dimen/imgIcon_Today_size"
+        android:layout_marginTop="@dimen/imgIcon_Today_marginTop"
+        android:layout_marginRight="@dimen/imgIcon_Today_marginRight"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tvDescription_Today_marginLeft"
+        android:layout_marginRight="@dimen/tvDescription_Today_marginRight"
+        android:text="@string/tvDescription_Today"
+        android:textColor="@color/tvDescription_Today"
+        android:textSize="@dimen/tvDescription_Today_textSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgIcon" />
+
+    <ListView
+        android:id="@+id/lvDetails"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/Tomorrow_Fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/lvDetails_Today_marginTop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
 
 </android.support.constraint.ConstraintLayout>

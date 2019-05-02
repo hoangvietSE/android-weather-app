@@ -34,6 +34,9 @@
     <string name="detailWeather_cloud">Cloud</string>
     <string name="detailWeather_sunrise">Sunrise</string>
     <string name="detailWeather_sunset">Sunset</string>
+    <string name="detailWeather_rain">Rain</string>
+
+    <string name="timeEnglish_today">MMMM dd, hh:mm aaa</string>
 
 
 </resources>

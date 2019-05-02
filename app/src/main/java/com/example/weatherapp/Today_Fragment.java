@@ -44,7 +44,7 @@ public class Today_Fragment extends Fragment {
     TextView tvDescription;
     ImageView imgIcon;
     ListView lvDetails;
-    String city = null;
+    String city = "Hanoi";
 
     DetailWeatherAdapter adapter;
     ArrayList<DetailWeather> model = new ArrayList<>();
@@ -67,15 +67,15 @@ public class Today_Fragment extends Fragment {
         try {
             String citySearch = getArguments().getString("dataByHoangViet");
             this.city = citySearch;
-            Log.d("myLog", citySearch);
+
         } catch (NullPointerException ex) {
             //do-something
         }
-        if (city != null) {
-            getCurrentWeather(city);
-            adapter = new DetailWeatherAdapter(getContext(), R.layout.detail_weather, model);
-            lvDetails.setAdapter(adapter);
-        }
+
+        //default Hanoi's weather
+        getCurrentWeather(city);
+
+
         return view;
     }
 
@@ -172,11 +172,11 @@ public class Today_Fragment extends Fragment {
                     String timeSunSet = simpleDateFormatTime.format(dateSunSet);
                     model.add(new DetailWeather(getResources().getString(R.string.detailWeather_sunset), timeSunSet));
 
+                    adapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                adapter.notifyDataSetChanged();
 
             }
         }, new Response.ErrorListener() {
@@ -196,6 +196,9 @@ public class Today_Fragment extends Fragment {
         tvDescription = (TextView) view.findViewById(R.id.tvDescription);
         imgIcon = (ImageView) view.findViewById(R.id.imgIcon);
         lvDetails = (ListView) view.findViewById(R.id.lvDetails);
+
+        adapter = new DetailWeatherAdapter(getContext(), R.layout.detail_weather, model);
+        lvDetails.setAdapter(adapter);
     }
 
 

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 if (tab.getPosition() == 0) {
                     tvCity.setEnabled(true);
                     edtCity.setEnabled(true);
+
                     //change-color
                     //tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.colorPrimary));
                 } else if (tab.getPosition() == 1) {
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     Tomorrow_Fragment tomorrow_fragment = new Tomorrow_Fragment();
                     tomorrow_fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.tomorrow, tomorrow_fragment)
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                            .commit();
 
                     //change-color
                 } else {
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     SevenNextDays_Fragment sevenNextDays_fragment = new SevenNextDays_Fragment();
                     sevenNextDays_fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.sevenDays, sevenNextDays_fragment)
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                            .commit();
 
                     //change-color
                 }
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     today_fragment.setArguments(bundle);
                     //tomorrow_fragment.setArguments(bundle);
                     //sevenDays_fragment.setArguments(bundle);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.today, today_fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.today, today_fragment).commit();
                     //getSupportFragmentManager().beginTransaction().replace(R.id.tomorrow, tomorrow_fragment).commit();
                     //getSupportFragmentManager().beginTransaction().replace(R.id.tomorrow, sevenDays_fragment).commit();
                 } catch (IllegalArgumentException ex) {
