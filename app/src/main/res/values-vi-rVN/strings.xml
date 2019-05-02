@@ -6,4 +6,12 @@
     <string name="itemToday">Hôm nay</string>
     <string name="itemTomorrow">Ngày mai</string>
     <string name="itemSevenDays">7 ngày tiếp theo</string>
+    <string name="detailWeather_minTemp">Nhiệt độ thấp nhất</string>
+    <string name="detailWeather_maxTemp">Nhiệt độ cao nhất</string>
+    <string name="detailWeather_pressure">Áp suất</string>
+    <string name="detailWeather_humidity">Độ ẩm</string>
+    <string name="detailWeather_windSpeed">Tốc độ gió</string>
+    <string name="detailWeather_cloud">Mây</string>
+    <string name="detailWeather_sunrise">Bình minh</string>
+    <string name="detailWeather_sunset">Hoàng hôn</string>
 </resources>

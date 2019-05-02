@@ -34,7 +34,7 @@
     <dimen name="imgIcon_Today_size">100dp</dimen>
 
     <!--Description-->
-    <dimen name="tvDescription_Today_marginRight">80dp</dimen>
+    <dimen name="tvDescription_Today_marginRight">135dp</dimen>
     <dimen name="tvDescription_Today_marginLeft">320dp</dimen>
     <dimen name="tvDescription_Today_textSize">16sp</dimen>
 
@@ -42,4 +42,8 @@
     <dimen name="lvDetails_Today_marginTop">20dp</dimen>
 
 
+    <!--Detail Weather-->
+    <dimen name="tvName">16sp</dimen>
+    <dimen name="tvValue">16sp</dimen>
+    <dimen name="tvName_marginRight">50dp</dimen>
 </resources>

@@ -19,9 +19,21 @@
     <string name="tvTemperature_Today" translatable="false">31</string>
     <string name="tvMetric01_Today" translatable="false">o</string>
     <string name="tvMetric02_Today" translatable="false">C</string>
-    <string name="tvDescription_Today" translatable="false">Mostly Clouds</string>
+    <string name="tvDescription_Today" translatable="false">mist</string>
+
+    <string name="tvName" translatable="false">Name</string>
+    <string name="tvValue" translatable="false">Value</string>
 
 
+    <!-- detail weather-->
+    <string name="detailWeather_minTemp">Minimum Temperature</string>
+    <string name="detailWeather_maxTemp">Maximum Temperature</string>
+    <string name="detailWeather_pressure">Pressure</string>
+    <string name="detailWeather_humidity">Humidity</string>
+    <string name="detailWeather_windSpeed">Wind Speed</string>
+    <string name="detailWeather_cloud">Cloud</string>
+    <string name="detailWeather_sunrise">Sunrise</string>
+    <string name="detailWeather_sunset">Sunset</string>
 
 
 </resources>
