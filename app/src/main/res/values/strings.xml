@@ -37,6 +37,7 @@
     <string name="detailWeather_rain">Rain</string>
 
     <string name="timeEnglish_today">MMMM dd, hh:mm aaa</string>
+    <string name="timeEnglish_tomorrow">MMMM dd, yyyy</string>
 
 
 </resources>

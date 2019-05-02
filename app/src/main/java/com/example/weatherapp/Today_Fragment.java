@@ -102,7 +102,7 @@ public class Today_Fragment extends Fragment {
                     String dt = jsonObject.getString("dt");
                     Long l = Long.valueOf(dt);
                     Date date = new Date(l * 1000);
-                    SimpleDateFormat simpleDateFormatTime = new SimpleDateFormat("MMMM dd, hh:mm aaa");
+                    SimpleDateFormat simpleDateFormatTime = new SimpleDateFormat(getResources().getString(R.string.timeEnglish_today));
                     String time = simpleDateFormatTime.format(date);
                     tvTime.setText(time);
 
@@ -162,14 +162,14 @@ public class Today_Fragment extends Fragment {
                     String dtSunRise = jsonObjectSys.getString("sunrise");
                     Long longSunRise = Long.valueOf(dtSunRise);
                     Date dateSunRise = new Date(longSunRise * 1000);
-                    String timeSunRise = simpleDateFormatTime.format(dateSunRise);
+                    String timeSunRise = simpleDateFormat.format(dateSunRise);
                     model.add(new DetailWeather(getResources().getString(R.string.detailWeather_sunrise), timeSunRise));
 
                     //Sunset
                     String dtSunSet = jsonObjectSys.getString("sunset");
                     Long longSunSet = Long.valueOf(dtSunSet);
                     Date dateSunSet = new Date(longSunSet * 1000);
-                    String timeSunSet = simpleDateFormatTime.format(dateSunSet);
+                    String timeSunSet = simpleDateFormat.format(dateSunSet);
                     model.add(new DetailWeather(getResources().getString(R.string.detailWeather_sunset), timeSunSet));
 
                     adapter.notifyDataSetChanged();

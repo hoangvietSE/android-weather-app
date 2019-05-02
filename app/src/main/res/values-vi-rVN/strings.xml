@@ -16,4 +16,5 @@
     <string name="detailWeather_sunset">Hoàng hôn</string>
     <string name="detailWeather_rain">Lượng mưa</string>
     <string name="timeEnglish_today">dd-MMMM, hh:mm aaa</string>
+    <string name="timeEnglish_tomorrow">dd/MMMM/yyyy</string>
 </resources>

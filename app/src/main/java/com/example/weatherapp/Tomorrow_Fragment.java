@@ -106,7 +106,7 @@ public class Tomorrow_Fragment extends Fragment {
                     String dt = jsonObjectList.getString("dt");
                     Long l = Long.valueOf(dt);
                     Date date = new Date(l * 1000);
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(getResources().getString(R.string.timeEnglish_tomorrow));
                     String time = simpleDateFormat.format(date);
                     tvTime.setText(time);
 
