@@ -18,7 +18,18 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weatherapp.adater.DetailWeatherAdapter;
+import com.example.weatherapp.model.DetailWeather;
+import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 
@@ -34,6 +45,9 @@ public class Today_Fragment extends Fragment {
     ImageView imgIcon;
     ListView lvDetails;
     String city = null;
+
+    DetailWeatherAdapter adapter;
+    ArrayList<DetailWeather> model = new ArrayList<>();
 
 
     public Today_Fragment() {
@@ -59,6 +73,8 @@ public class Today_Fragment extends Fragment {
         }
         if (city != null) {
             getCurrentWeather(city);
+            adapter = new DetailWeatherAdapter(getContext(), R.layout.detail_weather, model);
+            lvDetails.setAdapter(adapter);
         }
         return view;
     }
@@ -71,7 +87,97 @@ public class Today_Fragment extends Fragment {
             @Override
             public void onResponse(String response) {
                 //handle JSON text format
-                Log.d("myLog", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    Log.d("myLog", response);
+
+                    //Country
+                    String country = jsonObject.getString("name");
+                    country += ",";
+                    JSONObject jsonObjectSys = jsonObject.getJSONObject("sys");
+                    country += jsonObjectSys.getString("country");
+                    tvCountry.setText(country);
+
+                    //time
+                    String dt = jsonObject.getString("dt");
+                    Long l = Long.valueOf(dt);
+                    Date date = new Date(l * 1000);
+                    SimpleDateFormat simpleDateFormatTime = new SimpleDateFormat("MMMM dd, hh:mm aaa");
+                    String time = simpleDateFormatTime.format(date);
+                    tvTime.setText(time);
+
+                    //temperature
+                    JSONObject jsonObjectMain = jsonObject.getJSONObject("main");
+                    String temperature = jsonObjectMain.getString("temp");
+                    double doubleTemp = Double.valueOf(temperature);
+                    tvTemperature.setText(String.valueOf((int) doubleTemp));
+
+                    //Description and icon
+                    JSONArray jsonArrayWeather = jsonObject.getJSONArray("weather");
+                    JSONObject jsonObjectWeather = jsonArrayWeather.getJSONObject(0);
+                    String description = jsonObjectWeather.getString("description");
+                    String icon = jsonObjectWeather.getString("icon");
+
+                    Picasso.with(getContext()).load("http://openweathermap.org/img/w/" + icon + ".png").into(imgIcon);
+                    tvDescription.setText(description);
+
+
+                    //detail weather
+                    //min temp
+                    String minTemp = jsonObjectMain.getString("temp_min");
+                    double doubleMinTemp = Double.valueOf(minTemp);
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_minTemp),
+                            String.valueOf((int) doubleMinTemp) + "*C"));
+
+                    //max temp
+                    String maxTemp = jsonObjectMain.getString("temp_max");
+                    double doubleMaxTemp = Double.valueOf(maxTemp);
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_maxTemp),
+                            String.valueOf((int) doubleMaxTemp) + "*C"));
+
+                    //pressure
+                    String pressure = jsonObjectMain.getString("pressure");
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_pressure),
+                            pressure + " hPa"));
+
+                    //humidity
+                    String humidity = jsonObjectMain.getString("humidity");
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_humidity),
+                            humidity + " %"));
+
+                    //winSpeed
+                    JSONObject jsonObjectWind = jsonObject.getJSONObject("wind");
+                    String winSpeed = jsonObjectWind.getString("speed");
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_windSpeed),
+                            winSpeed + " m/s"));
+
+                    //cloud
+                    JSONObject jsonObjectCloud = jsonObject.getJSONObject("clouds");
+                    String cloud = jsonObjectCloud.getString("all");
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_cloud),
+                            cloud + " %"));
+
+                    //Sunrise
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm aaa");
+                    String dtSunRise = jsonObjectSys.getString("sunrise");
+                    Long longSunRise = Long.valueOf(dtSunRise);
+                    Date dateSunRise = new Date(longSunRise * 1000);
+                    String timeSunRise = simpleDateFormatTime.format(dateSunRise);
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_sunrise), timeSunRise));
+
+                    //Sunset
+                    String dtSunSet = jsonObjectSys.getString("sunset");
+                    Long longSunSet = Long.valueOf(dtSunSet);
+                    Date dateSunSet = new Date(longSunSet * 1000);
+                    String timeSunSet = simpleDateFormatTime.format(dateSunSet);
+                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_sunset), timeSunSet));
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                adapter.notifyDataSetChanged();
+
             }
         }, new Response.ErrorListener() {
             @Override
