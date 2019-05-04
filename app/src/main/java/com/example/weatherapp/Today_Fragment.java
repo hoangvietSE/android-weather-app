@@ -1,6 +1,5 @@
 package com.example.weatherapp;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -89,7 +88,7 @@ public class Today_Fragment extends Fragment {
                 //handle JSON text format
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    Log.d("myLog", response);
+
 
                     //Country
                     String country = jsonObject.getString("name");

@@ -34,7 +34,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="7"
                     android:background="@drawable/custom_edtcity"
-                    android:hint="@string/edtCity_hint" />
+                    android:hint="@string/edtCity_hint"
+                    android:maxLines="1"
+                    android:minLines="1" />
 
                 <TextView
                     android:id="@+id/tvCity"

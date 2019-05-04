@@ -46,4 +46,23 @@
     <dimen name="tvName">16sp</dimen>
     <dimen name="tvValue">16sp</dimen>
     <dimen name="tvName_marginRight">50dp</dimen>
+
+
+    <!--SevenNextDays-->
+    <dimen name="tvDayOfWeek_textSize">20sp</dimen>
+    <dimen name="tvDate_textSize">20sp</dimen>
+    <dimen name="tvStatus_textSize">20sp</dimen>
+
+    <dimen name="imgViewIcon_width">40dp</dimen>
+    <dimen name="imgViewIcon_height">40dp</dimen>
+
+    <dimen name="tvMaxTemp_textSize">20sp</dimen>
+    <dimen name="tvMaxTemp_marginTop">10dp</dimen>
+    <dimen name="tvMaxTemp_marginLeft">30dp</dimen>
+
+    <dimen name="tvMinTemp_textSize">20sp</dimen>
+    <dimen name="tvMinTemp_marginTop">10dp</dimen>
+    <dimen name="tvMinTemp_marginLeft">30dp</dimen>
+
+
 </resources>

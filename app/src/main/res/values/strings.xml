@@ -40,4 +40,12 @@
     <string name="timeEnglish_tomorrow">MMMM dd, yyyy</string>
 
 
+    <!--SevenNextDays-->
+    <string name="tvDayOfWeek_text">Thursday</string>
+    <string name="tvDate_text">01-01-2019</string>
+    <string name="tvStatus_text">Cloud</string>
+    <string name="tvMaxTemp">31*C</string>
+    <string name="tvMinTemp">31*C</string>
+
+
 </resources>
