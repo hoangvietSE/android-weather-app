@@ -41,11 +41,11 @@
 
 
     <!--SevenNextDays-->
-    <string name="tvDayOfWeek_text">Thursday</string>
-    <string name="tvDate_text">01-01-2019</string>
-    <string name="tvStatus_text">Cloud</string>
-    <string name="tvMaxTemp">31*C</string>
-    <string name="tvMinTemp">31*C</string>
+    <string name="tvDayOfWeek_text" translatable="false">Thursday</string>
+    <string name="tvDate_text" translatable="false">01-01-2019</string>
+    <string name="tvStatus_text" translatable="false">Cloud</string>
+    <string name="tvMaxTemp" translatable="false">31*C</string>
+    <string name="tvMinTemp" translatable="false">31*C</string>
 
 
 </resources>

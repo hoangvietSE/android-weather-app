@@ -51,11 +51,9 @@ public class DetailWeatherAdapter extends BaseAdapter {
         } else {
             holder = (DetailWeatherHolder) view.getTag();
         }
-
         //get DetailWeather Object from position
         DetailWeather detailWeather = model.get(position);
         holder.populateFrom(detailWeather);
-
         return view;
     }
 

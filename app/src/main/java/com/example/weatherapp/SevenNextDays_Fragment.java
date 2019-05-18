@@ -35,7 +35,6 @@ import java.util.Locale;
 public class SevenNextDays_Fragment extends Fragment {
 
     String city = "Hanoi";
-
     ArrayList<SevenNextDay> model;
     ListView lvSevenNextDay;
     SevenNextDayWeatherAdapter adapter;
@@ -44,16 +43,14 @@ public class SevenNextDays_Fragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sevendays, container, false);
-
         setAdapterListView(view);
 
-        //get city from bundle
+        //get city from bundleT
         try {
             String citySearch = getArguments().getString("dataByHoangViet");
             this.city = citySearch;
@@ -66,7 +63,6 @@ public class SevenNextDays_Fragment extends Fragment {
         //get SenvenNextDay Weathe
         //default Hanoi's Weather
         getSevenNextDay(city);
-
         return view;
     }
 
@@ -83,7 +79,6 @@ public class SevenNextDays_Fragment extends Fragment {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArrayList = jsonObject.getJSONArray("list");
-
                     for (int i = 1; i < jsonArrayList.length(); i++) {
                         JSONObject jsonObjectList = jsonArrayList.getJSONObject(i);
 
@@ -120,10 +115,7 @@ public class SevenNextDays_Fragment extends Fragment {
                         model.add(new SevenNextDay(dayOfWeek, Date, status, icon, maxTemp, minTemp));
 
                     }
-
                     adapter.notifyDataSetChanged();
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -134,7 +126,6 @@ public class SevenNextDays_Fragment extends Fragment {
 
             }
         });
-
         requestQueue.add(stringRequest);
     }
 

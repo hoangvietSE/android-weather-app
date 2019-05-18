@@ -2,7 +2,9 @@
 <resources>
     <color name="colorPrimary">#FFC107</color>
     <color name="colorPrimaryDark">#FFA000</color>
-    <color name="colorAccent">#009688</color>
+    <color name="colorPrimaryDark_two">#70BDE0</color>
+    <color name="colorTablayout">#ADD2E2</color>
+    <color name="colorAccent">#000000</color>
     <color name="tabSelectedTextColor">#ffffff</color>
     <color name="tabTextColor">#000000</color>
 

@@ -36,7 +36,6 @@ import java.util.Locale;
  */
 public class Tomorrow_Fragment extends Fragment {
 
-
     TextView tvCountry;
     TextView tvTime;
     TextView tvTemperature;
@@ -44,41 +43,30 @@ public class Tomorrow_Fragment extends Fragment {
     ImageView imgIcon;
     ListView lvDetails;
     String city = "Hanoi";
-
     DetailWeatherAdapter adapter;
     ArrayList<DetailWeather> model = new ArrayList<>();
-
 
     public Tomorrow_Fragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tomorrow_, container, false);
-
         findView(view);
-
         //get city from bundle
         try {
             String citySearch = getArguments().getString("dataByHoangViet");
             this.city = citySearch;
             Log.d("myLogTomorrow", citySearch);
-
         } catch (NullPointerException ex) {
             //do-something
         }
-
-
         //default Hanoi's tomorrow weather
         getTomorrowWeather(city);
-
-
         return view;
-
     }
 
     private void getTomorrowWeather(String city) {
@@ -155,10 +143,9 @@ public class Tomorrow_Fragment extends Fragment {
                     model.add(new DetailWeather(getResources().getString(R.string.detailWeather_cloud),
                             clouds + " %"));
 
-                    String rain = jsonObjectList.getString("rain");
-                    model.add(new DetailWeather(getResources().getString(R.string.detailWeather_rain),
-                            rain + " mm"));
-
+                    //String rain = jsonObjectList.getString("rain");
+                    //model.add(new DetailWeather(getResources().getString(R.string.detailWeather_rain),
+                    //       rain + " mm"));
                     adapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
@@ -171,7 +158,6 @@ public class Tomorrow_Fragment extends Fragment {
 
             }
         });
-
         requestQueue.add(stringRequest);
     }
 
@@ -181,7 +167,6 @@ public class Tomorrow_Fragment extends Fragment {
         tvTemperature = (TextView) view.findViewById(R.id.tvTemperature);
         tvDescription = (TextView) view.findViewById(R.id.tvDescription);
         imgIcon = (ImageView) view.findViewById(R.id.imgIcon);
-
         lvDetails = (ListView) view.findViewById(R.id.lvDetails);
         adapter = new DetailWeatherAdapter(getContext(), R.layout.fragment_tomorrow_, model);
         lvDetails.setAdapter(adapter);

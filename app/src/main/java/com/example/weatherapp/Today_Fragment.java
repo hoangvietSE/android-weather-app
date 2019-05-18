@@ -44,10 +44,8 @@ public class Today_Fragment extends Fragment {
     ImageView imgIcon;
     ListView lvDetails;
     String city = "Hanoi";
-
     DetailWeatherAdapter adapter;
     ArrayList<DetailWeather> model = new ArrayList<>();
-
 
     public Today_Fragment() {
         // Required empty public constructor
@@ -58,23 +56,17 @@ public class Today_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_today_, container, false);
-
         //find View
         findView(view);
-
         //get city from bundle
         try {
             String citySearch = getArguments().getString("dataByHoangViet");
             this.city = citySearch;
-
         } catch (NullPointerException ex) {
             //do-something
         }
-
         //default Hanoi's weather
         getCurrentWeather(city);
-
-
         return view;
     }
 
@@ -88,7 +80,6 @@ public class Today_Fragment extends Fragment {
                 //handle JSON text format
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-
 
                     //Country
                     String country = jsonObject.getString("name");
@@ -119,7 +110,6 @@ public class Today_Fragment extends Fragment {
 
                     Picasso.with(getContext()).load("http://openweathermap.org/img/w/" + icon + ".png").into(imgIcon);
                     tvDescription.setText(description);
-
 
                     //detail weather
                     //min temp
@@ -184,7 +174,6 @@ public class Today_Fragment extends Fragment {
 
             }
         });
-
         requestQueue.add(stringRequest);
     }
 
@@ -195,7 +184,6 @@ public class Today_Fragment extends Fragment {
         tvDescription = (TextView) view.findViewById(R.id.tvDescription);
         imgIcon = (ImageView) view.findViewById(R.id.imgIcon);
         lvDetails = (ListView) view.findViewById(R.id.lvDetails);
-
         adapter = new DetailWeatherAdapter(getContext(), R.layout.detail_weather, model);
         lvDetails.setAdapter(adapter);
     }
